@@ -1,0 +1,59 @@
+[gd_scene load_steps=9 format=3 uid="uid://frarq0so1hhg"]
+
+[ext_resource type="PackedScene" uid="uid://cm4a3mhyhklw2" path="res://scenes/entity.tscn" id="1_wd3n7"]
+[ext_resource type="Texture2D" uid="uid://b4ieo65d47vd1" path="res://assets/textures/Prototype Textures/grid_512x512/grid_white_512x512.png" id="1_xin60"]
+[ext_resource type="Texture2D" uid="uid://b4n1cnl0femnq" path="res://assets/textures/Prototype Textures/grid_512x512/grid_blue_512x512.png" id="2_dcj12"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_wd3n7"]
+sky_horizon_color = Color(0.662243, 0.671743, 0.686743, 1)
+ground_horizon_color = Color(0.662243, 0.671743, 0.686743, 1)
+
+[sub_resource type="Sky" id="Sky_t7lvb"]
+sky_material = SubResource("ProceduralSkyMaterial_wd3n7")
+
+[sub_resource type="Environment" id="Environment_xin60"]
+background_mode = 2
+sky = SubResource("Sky_t7lvb")
+tonemap_mode = 2
+glow_enabled = true
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_k0jga"]
+albedo_texture = ExtResource("1_xin60")
+uv1_scale = Vector3(100, 100, 100)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ishf5"]
+albedo_texture = ExtResource("2_dcj12")
+uv1_scale = Vector3(100, 100, 100)
+
+[node name="Node3D" type="Node3D"]
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.866023, -0.433016, 0.250001, 0, 0.499998, 0.866027, -0.500003, 0.749999, -0.43301, 0, 0, 0)
+shadow_enabled = true
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_xin60")
+
+[node name="plane" type="CSGBox3D" parent="."]
+transform = Transform3D(100, 0, 0, 0, 100, 0, 0, 0, 100, 0, 0, 0)
+material_override = SubResource("StandardMaterial3D_k0jga")
+use_collision = true
+size = Vector3(1, 0.001, 1)
+
+[node name="wall" type="CSGBox3D" parent="."]
+transform = Transform3D(100, 0, 0, 0, 100, 0, 0, 0, 100, 0.183006, 50.0488, 49.9498)
+material_override = SubResource("StandardMaterial3D_ishf5")
+use_collision = true
+size = Vector3(1, 1, 0.001)
+
+[node name="Box" type="CSGBox3D" parent="."]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -26.6272, 1, -2)
+use_collision = true
+
+[node name="Box 2" type="CSGBox3D" parent="."]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -18.6272, 0.470215, -2)
+use_collision = true
+size = Vector3(1, 0.5, 1)
+
+[node name="entity" parent="." instance=ExtResource("1_wd3n7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.686897, 2.94282, 0.615294)
