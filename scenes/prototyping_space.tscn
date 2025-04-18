@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://frarq0so1hhg"]
+[gd_scene load_steps=10 format=3 uid="uid://frarq0so1hhg"]
 
 [ext_resource type="PackedScene" uid="uid://cm4a3mhyhklw2" path="res://scenes/entity.tscn" id="1_wd3n7"]
 [ext_resource type="Texture2D" uid="uid://b4ieo65d47vd1" path="res://assets/textures/Prototype Textures/grid_512x512/grid_white_512x512.png" id="1_xin60"]
@@ -25,6 +25,10 @@ uv1_scale = Vector3(100, 100, 100)
 albedo_texture = ExtResource("2_dcj12")
 uv1_scale = Vector3(100, 100, 100)
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_xin60"]
+albedo_texture = ExtResource("2_dcj12")
+uv1_scale = Vector3(100, 25, 100)
+
 [node name="Node3D" type="Node3D"]
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
@@ -45,6 +49,24 @@ transform = Transform3D(100, 0, 0, 0, 100, 0, 0, 0, 100, 0.183006, 50.0488, 49.9
 material_override = SubResource("StandardMaterial3D_ishf5")
 use_collision = true
 size = Vector3(1, 1, 0.001)
+
+[node name="wall2" type="CSGBox3D" parent="."]
+transform = Transform3D(100, 0, 0, 0, 100, 0, 0, 0, 100, 0.183006, 50.0488, 49.9498)
+material_override = SubResource("StandardMaterial3D_ishf5")
+use_collision = true
+size = Vector3(1, 1, 0.001)
+
+[node name="wall3" type="CSGBox3D" parent="."]
+transform = Transform3D(100, 0, 0, 0, 100, 0, 0, 0, 100, 0.183006, 50.0488, 49.9498)
+material_override = SubResource("StandardMaterial3D_ishf5")
+use_collision = true
+size = Vector3(1, 1, 0.001)
+
+[node name="wall4" type="CSGBox3D" parent="."]
+transform = Transform3D(-4.37114e-06, 0, -100, 0, 100, 0, 100, 0, -4.37114e-06, -49.8663, 12.5498, -6.86646e-05)
+material_override = SubResource("StandardMaterial3D_xin60")
+use_collision = true
+size = Vector3(1, 0.25, 0.001)
 
 [node name="Box" type="CSGBox3D" parent="."]
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -26.6272, 1, -2)
