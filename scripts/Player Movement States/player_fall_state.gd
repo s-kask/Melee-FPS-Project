@@ -4,6 +4,8 @@ extends State
 var idleState: State
 @export
 var walkState: State
+@export
+var dashState: State
 
 @onready var head: Node3D = $"../../Head"
 
@@ -14,15 +16,16 @@ func enter() -> void:
 	print("fall state")
 
 func process_physics(delta: float) -> State:
-	#print("ON FLOOR?", parent.is_on_floor(), "Y velocity:", parent.velocity.y)
 	parent.velocity.y += gravity * delta
 	
 	var direction = get_input_direction()
 	
-	var airControl = 5.0
+	var airControl = 2.0
 	parent.velocity.x = lerp(parent.velocity.x, direction.x * moveSpeed, delta * airControl)
 	parent.velocity.z = lerp(parent.velocity.z, direction.z * moveSpeed, delta * airControl)
 	
+	if !parent.is_on_floor() and Input.is_action_just_pressed("sprint"):
+		return dashState
 	
 	if parent.is_on_floor():
 		if direction.length() != 0:

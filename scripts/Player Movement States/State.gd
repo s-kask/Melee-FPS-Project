@@ -6,6 +6,10 @@ var moveSpeed: float = 10
 
 var gravity: float = -9.82
 
+var jumpForce: float = 10
+
+var dashForce: float = 15
+
 #håller en referens till parent så att den kan bli kontrollerad av statet
 var parent: Player
 
