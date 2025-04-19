@@ -10,6 +10,7 @@ var dashState: State
 @onready var head: Node3D = $"../../Head"
 
 
+
 # Called when the node enters the scene tree for the first time.
 func enter() -> void:
 	super()
@@ -24,7 +25,7 @@ func process_physics(delta: float) -> State:
 	parent.velocity.x = lerp(parent.velocity.x, direction.x * moveSpeed, delta * airControl)
 	parent.velocity.z = lerp(parent.velocity.z, direction.z * moveSpeed, delta * airControl)
 	
-	if !parent.is_on_floor() and Input.is_action_just_pressed("sprint"):
+	if !parent.is_on_floor() and Input.is_action_just_pressed("sprint") and direction.length() > 0.01:
 		return dashState
 	
 	if parent.is_on_floor():

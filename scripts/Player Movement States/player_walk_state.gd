@@ -11,13 +11,12 @@ var sprintState : State
 
 
 var speed
-const WALK_SPEED = 5.0
 
 
 # Called when the node enters the scene tree for the first time.
 func enter() -> void:
 	super()
-	speed = WALK_SPEED
+	speed = moveSpeed
 	print("walk state")
 
 func process_physics(delta: float) -> State:
@@ -46,6 +45,7 @@ func process_physics(delta: float) -> State:
 	#jump check
 	if Input.is_action_just_pressed("jump"):
 		return jumpState
+	
 	
 	if direction.length() == 0:
 		return idleState

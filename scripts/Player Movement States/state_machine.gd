@@ -7,7 +7,7 @@ var currentState: State
 
 #initialiserar state maskinen genom att ge vajre "child" state en referens
 #till "parent" objectet som den tillhör och går in i default statet startState
-func init(parent: Player) -> void:
+func init(parent: CharacterBody3D) -> void:
 	print("Initierar state machine med: ", parent)
 	for child in get_children():
 		print(" -> Initierar state: ", child.name)

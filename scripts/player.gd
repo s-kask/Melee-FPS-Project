@@ -1,7 +1,7 @@
 class_name Player
-extends CharacterBody3D
+extends EntityBase
 
-@onready var stateMachine: Node = $PlayerMovementState
+@onready var stateMachine: Node = $PlayerState
 @onready var head: Node3D = $Head
 @onready var pov: Camera3D = $Head/POV
 
@@ -14,6 +14,14 @@ const SENSITIVITY = 0.003
 func _ready() -> void:
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 	stateMachine.init(self)
+
+
+func get_input_direction() -> Vector3:
+	var input_dir = Input.get_vector("move_left", "move_right", "move_back", "move_forward")
+	var cam_basis = head.global_transform.basis
+	var forward = -cam_basis.z.normalized()
+	var right = cam_basis.x.normalized()
+	return (right * input_dir.x + forward * input_dir.y).normalized()
 
 func _unhandled_input(event: InputEvent) -> void:
 	if cameraEnabled and event is InputEventMouseMotion:

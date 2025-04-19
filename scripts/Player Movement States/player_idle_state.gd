@@ -15,6 +15,8 @@ func enter() -> void:
 	parent.velocity.z = 0
 	print("idle state")
 
+
+
 #kollar om jumpState eller walkState behöver anropas
 func process_input(_event: InputEvent) -> State:
 	if Input.is_action_just_pressed("jump") and parent.is_on_floor():
@@ -30,3 +32,4 @@ func process_physics(delta: float) -> State:
 	if !parent.is_on_floor():
 		return fallState
 	return null
+	

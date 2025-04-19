@@ -1,7 +1,7 @@
-[gd_scene load_steps=14 format=3 uid="uid://cm4a3mhyhklw2"]
+[gd_scene load_steps=13 format=3 uid="uid://cm4a3mhyhklw2"]
 
 [ext_resource type="Script" uid="uid://jjquc75un8ky" path="res://scripts/player.gd" id="1_gr72c"]
-[ext_resource type="Script" uid="uid://05yl7exrtnft" path="res://scripts/Player Movement States/state_machine.gd" id="2_gr72c"]
+[ext_resource type="Script" uid="uid://05yl7exrtnft" path="res://scripts/Player Movement States/player_movement_state_machine.gd" id="2_gr72c"]
 [ext_resource type="Texture2D" uid="uid://c8q08873xfixl" path="res://assets/textures/Prototype Textures/logo_512x512/logo_black_512x512.png" id="2_wd4e3"]
 [ext_resource type="Script" uid="uid://cnma2frb38bfn" path="res://scripts/Player Movement States/player_idle_state.gd" id="4_51v4c"]
 [ext_resource type="Script" uid="uid://cgsb75axusi8h" path="res://scripts/Player Movement States/player_jump_state.gd" id="4_lmnk1"]
@@ -9,7 +9,6 @@
 [ext_resource type="Script" uid="uid://bmuda3cjxoxb1" path="res://scripts/Player Movement States/player_walk_state.gd" id="5_ygnst"]
 [ext_resource type="Script" uid="uid://dosqt5lifopg0" path="res://scripts/Player Movement States/player_sprint_state.gd" id="6_afumw"]
 [ext_resource type="Script" uid="uid://d37kxe3a1lb2v" path="res://scripts/Player Movement States/player_dash_state.gd" id="9_0oii0"]
-[ext_resource type="Script" uid="uid://dga52n0u6l0yd" path="res://scripts/Player Attack States/player_basic_attack_state.gd" id="10_by054"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0oii0"]
 albedo_texture = ExtResource("2_wd4e3")
@@ -25,19 +24,18 @@ points = PackedVector3Array(-0.125207, -0.532801, -0.480507, 0.0227831, 0.47607,
 script = ExtResource("1_gr72c")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="CharacterBody3D"]
-transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 0, 1, 0)
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 0, 0, 0)
 material_override = SubResource("StandardMaterial3D_0oii0")
 mesh = SubResource("CapsuleMesh_u8vuu")
 
 [node name="CollisionShape3D2" type="CollisionShape3D" parent="CharacterBody3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
 shape = SubResource("ConvexPolygonShape3D_3vyb7")
 
 [node name="Head" type="Node3D" parent="CharacterBody3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.018415, 0.974918, 0.0448995)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.615907, 0)
 
 [node name="POV" type="Camera3D" parent="CharacterBody3D/Head"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.00021, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.000207782, 0)
 
 [node name="PlayerState" type="Node" parent="CharacterBody3D" node_paths=PackedStringArray("startState")]
 script = ExtResource("2_gr72c")
@@ -61,6 +59,7 @@ idleState = NodePath("../PlayerIdleState")
 jumpState = NodePath("../PlayerJumpState")
 fallState = NodePath("../PlayerFallState")
 sprintState = NodePath("../PlayerSprintState")
+moveSpeed = null
 
 [node name="PlayerSprintState" type="Node" parent="CharacterBody3D/PlayerState" node_paths=PackedStringArray("idleState", "jumpState", "fallState", "walkState")]
 script = ExtResource("6_afumw")
@@ -68,6 +67,7 @@ idleState = NodePath("../PlayerIdleState")
 jumpState = NodePath("../PlayerJumpState")
 fallState = NodePath("../PlayerFallState")
 walkState = NodePath("../PlayerWalkState")
+moveSpeed = null
 
 [node name="PlayerJumpState" type="Node" parent="CharacterBody3D/PlayerState" node_paths=PackedStringArray("fallState", "idleState", "walkState")]
 script = ExtResource("4_lmnk1")
@@ -78,6 +78,3 @@ walkState = NodePath("../PlayerWalkState")
 [node name="PlayerDashState" type="Node" parent="CharacterBody3D/PlayerState" node_paths=PackedStringArray("fallState")]
 script = ExtResource("9_0oii0")
 fallState = NodePath("../PlayerFallState")
-
-[node name="PlayerBasicAttackState" type="Node" parent="CharacterBody3D/PlayerState"]
-script = ExtResource("10_by054")
