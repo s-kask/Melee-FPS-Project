@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://frarq0so1hhg"]
+[gd_scene load_steps=17 format=3 uid="uid://frarq0so1hhg"]
 
 [ext_resource type="PackedScene" uid="uid://cm4a3mhyhklw2" path="res://scenes/entity.tscn" id="1_wd3n7"]
 [ext_resource type="Texture2D" uid="uid://b4n1cnl0femnq" path="res://assets/textures/Prototype Textures/grid_512x512/grid_blue_512x512.png" id="2_dcj12"]
@@ -6,7 +6,6 @@
 [ext_resource type="Texture2D" uid="uid://bm8sxlloyhvvi" path="res://assets/textures/Prototype Textures/grid_512x512/grid_black_512x512.png" id="2_xin60"]
 [ext_resource type="Texture2D" uid="uid://bef0amrukg13s" path="res://assets/textures/Prototype Textures/grid_512x512/grid_yellow_512x512.png" id="3_ishf5"]
 [ext_resource type="Texture2D" uid="uid://53iogq2n2j7d" path="res://assets/textures/Prototype Textures/grid_512x512/grid_red_512x512.png" id="3_vblpk"]
-[ext_resource type="PackedScene" uid="uid://cqcr7w71m6sf6" path="res://assets/models/sword place holder.glb" id="7_lnfkl"]
 [ext_resource type="PackedScene" uid="uid://cflvsqusgolc8" path="res://assets/models/player place holder.glb" id="8_3r86w"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_wd3n7"]
@@ -110,6 +109,3 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.686897, 2.94282, 0.615294)
 
 [node name="player place holder" parent="." instance=ExtResource("8_3r86w")]
 transform = Transform3D(-1.31134e-08, 0, 0.3, 0, 0.3, 0, -0.3, 0, -1.31134e-08, -25.2, 0.05, 7.042)
-
-[node name="sword place holder" parent="." instance=ExtResource("7_lnfkl")]
-transform = Transform3D(0.0850992, 0.287677, 0, -0.287677, 0.0850992, 0, 0, 0, 0.3, -25.1517, 0.957203, 7.3598)

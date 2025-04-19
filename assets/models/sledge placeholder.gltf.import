@@ -3,20 +3,20 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://cqcr7w71m6sf6"
-path="res://.godot/imported/sword place holder.glb-9eb084a7007c7f3c4ac8096711f72145.scn"
+uid="uid://dgeftnysptwi"
+path="res://.godot/imported/sledge placeholder.gltf-1a0d1af1bc475a0c16757f089c15a1d3.scn"
 
 [deps]
 
-source_file="res://assets/models/sword place holder.glb"
-dest_files=["res://.godot/imported/sword place holder.glb-9eb084a7007c7f3c4ac8096711f72145.scn"]
+source_file="res://assets/models/sledge placeholder.gltf"
+dest_files=["res://.godot/imported/sledge placeholder.gltf-1a0d1af1bc475a0c16757f089c15a1d3.scn"]
 
 [params]
 
 nodes/root_type=""
 nodes/root_name=""
 nodes/apply_root_scale=true
-nodes/root_scale=1.0
+nodes/root_scale=0.3
 nodes/import_as_skeleton_bones=false
 nodes/use_node_type_suffixes=true
 meshes/ensure_tangents=true
