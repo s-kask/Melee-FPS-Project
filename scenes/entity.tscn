@@ -45,7 +45,7 @@ fov = 90.0
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.488077, -0.810515, -0.898567)
 
 [node name="Weapon" parent="FPS Controller/Head/POV/Weapon Rig" instance=ExtResource("3_bdlbk")]
-transform = Transform3D(0.650755, 0.0213608, 0.758987, -0.758988, 0.0464216, 0.649448, -0.0213608, -0.998693, 0.0464216, 0.49, 0.867, 0.103)
+transform = Transform3D(-0.0890987, 0.886815, 0.453452, 0.317486, 0.456801, -0.830984, -0.944068, 0.0699247, -0.322251, -0.503, 0.344, 0.001)
 
 [node name="PlayerState" type="Node" parent="FPS Controller" node_paths=PackedStringArray("startState")]
 script = ExtResource("2_gr72c")

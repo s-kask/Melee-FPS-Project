@@ -56,28 +56,28 @@ environment = SubResource("Environment_xin60")
 [node name="walls" type="Node" parent="world"]
 
 [node name="wall" type="CSGBox3D" parent="world/walls"]
-transform = Transform3D(100, 0, 0, 0, 100, 0, 0, 0, 100, 0.183006, 50.0488, 49.9498)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.183006, 50.0488, 49.9498)
 material_override = SubResource("StandardMaterial3D_ishf5")
 use_collision = true
-size = Vector3(1, 1, 0.001)
+size = Vector3(100, 100, 0.001)
 
 [node name="wall4" type="CSGBox3D" parent="world/walls"]
-transform = Transform3D(-4.37114e-06, 0, -100, 0, 100, 0, 100, 0, -4.37114e-06, -49.8663, 12.5498, -6.86646e-05)
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -49.8663, 12.5498, -6.86646e-05)
 material_override = SubResource("StandardMaterial3D_xin60")
 use_collision = true
-size = Vector3(1, 0.25, 0.001)
+size = Vector3(100, 25, 0.001)
 
 [node name="wall5" type="CSGBox3D" parent="world/walls"]
-transform = Transform3D(-4.37114e-06, 0, -100, 0, 100, 0, 100, 0, -4.37114e-06, 49.9085, 12.5498, -6.86646e-05)
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 49.9085, 12.5498, -6.86646e-05)
 material_override = SubResource("StandardMaterial3D_xin60")
 use_collision = true
-size = Vector3(1, 0.25, 0.001)
+size = Vector3(100, 25, 0.001)
 
 [node name="wall6" type="CSGBox3D" parent="world/walls"]
-transform = Transform3D(-100, 0, 8.74228e-06, 0, 100, 0, -8.74228e-06, 0, -100, -0.0866566, 12.5498, -49.9402)
+transform = Transform3D(-1, 0, 1.50996e-07, 0, 1, 0, -1.50996e-07, 0, -1, -0.0866566, 12.5498, -49.9402)
 material_override = SubResource("StandardMaterial3D_xin60")
 use_collision = true
-size = Vector3(1, 0.25, 0.001)
+size = Vector3(100, 25, 0.001)
 
 [node name="obstacles" type="Node" parent="world"]
 
@@ -99,10 +99,9 @@ material_override = SubResource("StandardMaterial3D_lnfkl")
 use_collision = true
 
 [node name="plane" type="CSGBox3D" parent="world"]
-transform = Transform3D(100, 0, 0, 0, 100, 0, 0, 0, 100, 0, 0, 0)
 material_override = SubResource("StandardMaterial3D_dcj12")
 use_collision = true
-size = Vector3(1, 0.001, 1)
+size = Vector3(100, 0.001, 100)
 
 [node name="entity" parent="." instance=ExtResource("1_wd3n7")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.686897, 2.94282, 0.615294)

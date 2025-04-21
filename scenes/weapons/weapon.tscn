@@ -1,16 +1,16 @@
 [gd_scene load_steps=4 format=3 uid="uid://l4fgcyp0rykg"]
 
 [ext_resource type="Script" uid="uid://it7acxt515n1" path="res://scripts/weapons/init_weapon.gd" id="1_nqevj"]
-[ext_resource type="Resource" uid="uid://5xwbhaoovmf5" path="res://assets/weapons/sledge/sledge.tres" id="2_eo7p8"]
-[ext_resource type="ArrayMesh" uid="uid://b8v503sgj676v" path="res://assets/weapons/sledge/sledge_mesh.mesh" id="3_0rtie"]
+[ext_resource type="Resource" uid="uid://d2j75bsi2qofi" path="res://assets/weapons/sword/katana.tres" id="2_0rtie"]
+[ext_resource type="ArrayMesh" uid="uid://d3mbn8euag0f6" path="res://assets/weapons/sword/katana.mesh" id="3_4uykt"]
 
 [node name="Weapon" type="Node3D"]
-transform = Transform3D(1, 0, 0, 0, 0.026177, 0.999657, 0, -0.999657, 0.026177, -0.11, 0.822, -1.587)
+transform = Transform3D(-0.0890987, 0.886815, 0.453452, 0.317485, 0.456801, -0.830984, -0.944068, 0.0699247, -0.322251, -0.503, 0.344, 0.001)
 script = ExtResource("1_nqevj")
-weaponType = ExtResource("2_eo7p8")
+weaponType = ExtResource("2_0rtie")
 
 [node name="WeaponMesh" type="MeshInstance3D" parent="."]
 unique_name_in_owner = true
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, -0.00237799, 0.0172883, -0.00882697)
-mesh = ExtResource("3_0rtie")
+mesh = ExtResource("3_4uykt")
 skeleton = NodePath("")
