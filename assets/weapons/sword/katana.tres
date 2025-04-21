@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="Weapons" load_steps=3 format=3 uid="uid://d2j75bsi2qofi"]
+
+[ext_resource type="ArrayMesh" uid="uid://d3mbn8euag0f6" path="res://assets/weapons/sword/katana.mesh" id="1_7uf3m"]
+[ext_resource type="Script" uid="uid://ppx50y855tdq" path="res://scripts/weapons/weapons.gd" id="1_brofn"]
+
+[resource]
+script = ExtResource("1_brofn")
+name = &"katana"
+position = Vector3(-0.503, 0.344, 0.001)
+rotation = Vector3(56.2, 125.4, 34.8)
+mesh = ExtResource("1_7uf3m")
+shadow = false
+metadata/_custom_type_script = "uid://ppx50y855tdq"

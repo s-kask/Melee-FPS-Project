@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="Weapons" load_steps=3 format=3 uid="uid://5xwbhaoovmf5"]
+
+[ext_resource type="ArrayMesh" uid="uid://b8v503sgj676v" path="res://assets/weapons/sledge/sledge_mesh.mesh" id="1_cm8i4"]
+[ext_resource type="Script" uid="uid://ppx50y855tdq" path="res://scripts/weapons/weapons.gd" id="1_k527p"]
+
+[resource]
+script = ExtResource("1_k527p")
+name = &"Sledgehammer"
+position = Vector3(0.49, 0.867, 0.103)
+rotation = Vector3(-40.5, 86.5, -61.7)
+mesh = ExtResource("1_cm8i4")
+shadow = false
+metadata/_custom_type_script = "uid://ppx50y855tdq"
